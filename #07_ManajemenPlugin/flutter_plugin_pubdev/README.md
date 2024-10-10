@@ -55,14 +55,58 @@ Run aplikasi tersebut dengan tekan F5, maka hasilnya akan seperti berikut.
 1. Selesaikan Praktikum tersebut, lalu dokumentasikan dan push ke repository Anda berupa screenshot hasil pekerjaan beserta penjelasannya di file README.md!
 <br>
 <img src="assets/img6.png">
+
 2. Jelaskan maksud dari langkah 2 pada praktikum tersebut!
+<br>
+Jawab : Perintah flutter pub add auto_size_text mempermudah proses penambahan paket ke dalam proyek Flutter Anda dengan satu perintah tanpa perlu mengedit file pubspec.yaml secara manual.
 <br>
 
 3. Jelaskan maksud dari langkah 5 pada praktikum tersebut!
 <br>
+Jawab : 
+Baris final String text; digunakan untuk mendeklarasikan properti yang nilainya tidak dapat diubah, sementara konstruktor const RedTextWidget({Key? key, required this.text}) : super(key: key); digunakan untuk memastikan bahwa text diberikan nilai saat widget dibuat, menjadikannya wajib (required), dan memungkinkan RedTextWidget untuk diinisialisasi sebagai objek konstan (const).
 
 4. Pada langkah 6 terdapat dua widget yang ditambahkan, jelaskan fungsi dan perbedaannya!
 <br>
+
+### Fungsi dan Perbedaan:
+1. **Container Pertama:**
+   ```dart
+   Container(
+     color: Colors.yellowAccent,
+     width: 50,
+     child: const RedTextWidget(
+       text: 'You have pushed the button this many times:',
+     ),
+   ),
+   ```
+   - **Fungsi:**
+     - `Container` ini digunakan untuk membungkus widget `RedTextWidget` dengan latar belakang (`color`) berwarna kuning (`Colors.yellowAccent`) dan lebar (`width`) sebesar 50.
+     - `RedTextWidget` adalah widget kustom yang dibuat sebelumnya untuk menampilkan teks berwarna merah dengan ukuran font tertentu.
+   - **Perbedaan Utama:**
+     - `child` dari `Container` ini adalah widget `RedTextWidget`, yang merupakan widget kustom yang dirancang untuk menampilkan teks dengan gaya tertentu.
+
+2. **Container Kedua:**
+   ```dart
+   Container(
+     color: Colors.greenAccent,
+     width: 100,
+     child: const Text(
+       'You have pushed the button this many times:',
+     ),
+   ),
+   ```
+   - **Fungsi:**
+     - `Container` ini digunakan untuk membungkus widget `Text` dengan latar belakang berwarna hijau (`Colors.greenAccent`) dan lebar (`width`) sebesar 100.
+     - `Text` adalah widget bawaan Flutter yang digunakan untuk menampilkan teks secara default tanpa ada styling tambahan.
+   - **Perbedaan Utama:**
+     - `child` dari `Container` ini adalah widget `Text` bawaan, yang menampilkan teks dengan gaya default tanpa modifikasi pada warna atau ukuran teks.
+
+### Kesimpulan:
+- **Perbedaan Utama:**
+  - **Widget Kustom (`RedTextWidget`)** pada `Container` pertama menampilkan teks berwarna merah dengan styling khusus.
+  - **Widget Bawaan (`Text`)** pada `Container` kedua menampilkan teks dengan gaya default.
+- **Fungsi `Container`:** Keduanya menggunakan `Container` untuk mengatur properti visual seperti warna latar belakang dan lebar, tetapi `Container` pertama memiliki `child` widget kustom (`RedTextWidget`), sedangkan yang kedua menggunakan `Text` bawaan.
 
 5. Jelaskan maksud dari tiap parameter yang ada di dalam plugin auto_size_text berdasarkan tautan pada dokumentasi ini !
 <br>
