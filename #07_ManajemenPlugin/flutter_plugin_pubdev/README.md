@@ -52,18 +52,19 @@ Run aplikasi tersebut dengan tekan F5, maka hasilnya akan seperti berikut.
 <img src="assets/img5.png">
 
 ## **8. Tugas Praktikum**
-1. Selesaikan Praktikum tersebut, lalu dokumentasikan dan push ke repository Anda berupa screenshot hasil pekerjaan beserta penjelasannya di file README.md!
+**1. Selesaikan Praktikum tersebut, lalu dokumentasikan dan push ke repository Anda berupa screenshot hasil pekerjaan beserta penjelasannya di file README.md!**
 <br>
 <img src="assets/img6.png">
 
-2. Jelaskan maksud dari langkah 2 pada praktikum tersebut!
+**2. Jelaskan maksud dari langkah 2 pada praktikum tersebut!**
 <br>
-Jawab : Perintah flutter pub add auto_size_text mempermudah proses penambahan paket ke dalam proyek Flutter Anda dengan satu perintah tanpa perlu mengedit file pubspec.yaml secara manual.
+**Jawab :**<br> 
+Perintah flutter pub add auto_size_text mempermudah proses penambahan paket ke dalam proyek Flutter Anda dengan satu perintah tanpa perlu mengedit file pubspec.yaml secara manual.
 <br>
 
-3. Jelaskan maksud dari langkah 5 pada praktikum tersebut!
+**3. Jelaskan maksud dari langkah 5 pada praktikum tersebut!**
 <br>
-Jawab : 
+**Jawab :** <br>
 Baris final String text; digunakan untuk mendeklarasikan properti yang nilainya tidak dapat diubah, sementara konstruktor const RedTextWidget({Key? key, required this.text}) : super(key: key); digunakan untuk memastikan bahwa text diberikan nilai saat widget dibuat, menjadikannya wajib (required), dan memungkinkan RedTextWidget untuk diinisialisasi sebagai objek konstan (const).
 
 4. Pada langkah 6 terdapat dua widget yang ditambahkan, jelaskan fungsi dan perbedaannya!
@@ -108,8 +109,99 @@ Baris final String text; digunakan untuk mendeklarasikan properti yang nilainya 
   - **Widget Bawaan (`Text`)** pada `Container` kedua menampilkan teks dengan gaya default.
 - **Fungsi `Container`:** Keduanya menggunakan `Container` untuk mengatur properti visual seperti warna latar belakang dan lebar, tetapi `Container` pertama memiliki `child` widget kustom (`RedTextWidget`), sedangkan yang kedua menggunakan `Text` bawaan.
 
-5. Jelaskan maksud dari tiap parameter yang ada di dalam plugin auto_size_text berdasarkan tautan pada dokumentasi ini !
+**5. Jelaskan maksud dari tiap parameter yang ada di dalam plugin auto_size_text berdasarkan tautan pada dokumentasi ini !**
 <br>
+Jawab : <br>
 
-6. Kumpulkan laporan praktikum Anda berupa link repository GitHub kepada dosen!
+**1. Usage** <br>
+teks akan berusaha menyesuaikan ukuran font agar sesuai dengan ruang yang tersedia tanpa melebihi dua baris. Ini membantu mencegah overflow pada teks di dalam widget.
+```dart
+AutoSizeText(
+  'The text to display',
+  style: TextStyle(fontSize: 20),
+  maxLines: 2,
+)
+```
+**2. maxLines** <br>
+Penggunaan AutoSizeText dalam Flutter memungkinkan teks panjang untuk secara otomatis menyesuaikan ukuran fontnya agar sesuai dengan ruang yang tersedia
+```dart
+AutoSizeText(
+  'A really long String',
+  style: TextStyle(fontSize: 30),
+  maxLines: 2,
+)
+```
+
+**3. minFontSize & maxFontSize** <br>
+Plugin AutoSizeText digunakan untuk menampilkan teks panjang yang secara otomatis menyesuaikan ukuran font agar sesuai dengan ruang yang tersedia.
+```dart
+AutoSizeText(
+  'A really long String',
+  style: TextStyle(fontSize: 30),
+  minFontSize: 18,
+  maxLines: 4,
+  overflow: TextOverflow.ellipsis,
+)
+```
+**4. group** <br>
+AutoSizeGroup digunakan untuk mengelompokkan beberapa AutoSizeText. Dengan mengaitkan beberapa teks ke grup yang sama (myGroup), semua teks dalam grup tersebut akan menyesuaikan ukuran font secara bersamaan agar tetap proporsional satu sama lain. Ini berguna untuk memastikan konsistensi visual dan ukuran teks dalam antarmuka pengguna, terutama saat teks berbeda memiliki panjang yang berbeda.
+```dart
+var myGroup = AutoSizeGroup();
+
+AutoSizeText(
+  'Text 1',
+  group: myGroup,
+);
+
+AutoSizeText(
+  'Text 2',
+  group: myGroup,
+);
+```
+
+**stepGranularity**
+AutoSizeText untuk menampilkan teks yang panjang dengan pengaturan otomatis pada ukuran font. 
+
+```dart
+AutoSizeText(
+  'A really long String',
+  style: TextStyle(fontSize: 40),
+  minFontSize: 10,
+  stepGranularity: 10,
+  maxLines: 4,
+  overflow: TextOverflow.ellipsis,
+)
+```
+
+presetFontSizes
+If you want to allow only specific font sizes, you can set them with presetFontSizes. If presetFontSizes is set, minFontSize, maxFontSize and stepGranularity will be ignored.
+
+AutoSizeText(
+  'A really long String',
+  presetFontSizes: [40, 20, 14],
+  maxLines: 4,
+)
+
+overflowReplacement
+If the text is overflowing and does not fit its bounds, this widget is displayed instead. This can be useful to prevent text being too small to read.
+
+AutoSizeText(
+  'A String tool long to display without extreme scaling or overflow.',
+  maxLines: 1,
+  overflowReplacement: Text('Sorry String too long'),
+)
+
+Rich Text
+You can also use Rich Text (like different text styles or links) with AutoSizeText. Just use the AutoSizeText.rich() constructor (which works exactly like the Text.rich() constructor).
+
+The only thing you have to be aware of is how the font size calculation works: The fontSize in the style parameter of AutoSizeText (or the inherited fontSize if none is set) is used as reference.
+
+For example:
+
+AutoSizeText.rich(
+  TextSpan(text: 'A really long String'),
+  style: TextStyle(fontSize: 20),
+  minFontSize: 5,
+)
+**6. Kumpulkan laporan praktikum Anda berupa link repository GitHub kepada dosen!**
 
