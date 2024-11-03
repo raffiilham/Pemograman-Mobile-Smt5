@@ -1,6 +1,5 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'dart:io';
 import 'package:kamera_flutter/widget/displaypicture_screen.dart';
 
 class TakePictureScreen extends StatefulWidget {
