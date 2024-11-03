@@ -7,11 +7,11 @@
 
 ## **3. Praktikum 1: Mengambil Foto dengan Kamera di Flutter**
 
-### Langkah 1: Buat Project Baru
+## Langkah 1: Buat Project Baru
 Buatlah sebuah project flutter baru dengan nama kamera_flutter, lalu sesuaikan style laporan praktikum yang Anda buat.
-<img src=" ">
+<img src="assets/img1.png">
 
-### Langkah 2: Tambah dependensi yang diperlukan
+## Langkah 2: Tambah dependensi yang diperlukan
 Anda memerlukan tiga dependensi pada project flutter untuk menyelesaikan praktikum ini.
 
 camera → menyediakan seperangkat alat untuk bekerja dengan kamera pada device.
@@ -40,9 +40,9 @@ Pada iOS, baris kode berikut harus ditambahkan pada file ios/Runner/Info.plist u
 <string>Explanation on why the microphone access is needed.</string>
 ```
 
-<img src=" ">
+<img src="assets/img3.png">
 
-### **Langkah 3: Ambil Sensor Kamera dari device**
+## **Langkah 3: Ambil Sensor Kamera dari device**
 Selanjutnya, kita perlu mengecek jumlah kamera yang tersedia pada perangkat menggunakan plugin camera seperti pada kode berikut ini. Kode ini letakkan dalam void main().
 
 **lib/main.dart**
@@ -59,15 +59,20 @@ final firstCamera = cameras.first;
 ```
 
 Ubah void main() menjadi async function seperti berikut ini.
+<img src="assets/img4.png">
 
 **lib/main.dart**
 
+```
 Future<void> main() async {
   ...
 }
+```
+<img src="assets/img5.png">
+
 Pastikan melakukan impor plugin sesuai yang dibutuhkan.
 
-Langkah 4: Buat dan inisialisasi CameraController
+## Langkah 4: Buat dan inisialisasi CameraController
 Setelah Anda dapat mengakses kamera, gunakan langkah-langkah berikut untuk membuat dan menginisialisasi CameraController. Pada langkah berikut ini, Anda akan membuat koneksi ke kamera perangkat yang memungkinkan Anda untuk mengontrol kamera dan menampilkan pratinjau umpan kamera.
 
 Buat StatefulWidget dengan kelas State pendamping.
@@ -75,8 +80,9 @@ Tambahkan variabel ke kelas State untuk menyimpan CameraController.
 Tambahkan variabel ke kelas State untuk menyimpan Future yang dikembalikan dari CameraController.initialize().
 Buat dan inisialisasi controller dalam metode initState().
 Hapus controller dalam metode dispose().
-lib/widget/takepicture_screen.dart
+**lib/widget/takepicture_screen.dart**
 
+```
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
@@ -123,15 +129,19 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     return Container();
   }
 }
-Perhatian: Jika Anda tidak menginisialisasi CameraController, Anda tidak dapat menggunakan kamera untuk menampilkan pratinjau dan mengambil gambar.
+```
+<img src="assets/img6.png">
 
-Langkah 5: Gunakan CameraPreview untuk menampilkan preview foto
+**Perhatian:** Jika Anda tidak menginisialisasi CameraController, Anda tidak dapat menggunakan kamera untuk menampilkan pratinjau dan mengambil gambar.
+
+## Langkah 5: Gunakan CameraPreview untuk menampilkan preview foto
 Gunakan widget CameraPreview dari package camera untuk menampilkan preview foto. Anda perlu tipe objek void berupa FutureBuilder untuk menangani proses async.
 
-Perhatian: Pada kode ini Anda perlu logic untuk menunggu controller selesai proses inisialisasi sebelum bekerja dengan kamera. Anda harus menunggu hasil dari method _initializeControllerFuture(), yang telah dibuat sebelumnya, agar dapat menampilkan preview foto dengan CameraPreview.
+**Perhatian:** Pada kode ini Anda perlu logic untuk menunggu controller selesai proses inisialisasi sebelum bekerja dengan kamera. Anda harus menunggu hasil dari method _initializeControllerFuture(), yang telah dibuat sebelumnya, agar dapat menampilkan preview foto dengan CameraPreview.
 
-lib/widget/takepicture_screen.dart
+**lib/widget/takepicture_screen.dart**
 
+```
 @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,7 +161,11 @@ lib/widget/takepicture_screen.dart
           }
         },
       ),
-Langkah 6: Ambil foto dengan CameraController
+```
+
+<img src="assets/img7.png">
+
+## Langkah 6: Ambil foto dengan CameraController
 Anda dapat menggunakan CameraController untuk mengambil gambar menggunakan metode takePicture(), yang mengembalikan objek XFile, merupakan sebuah objek abstraksi File lintas platform yang disederhanakan. Pada Android dan iOS, gambar baru disimpan dalam direktori cache masing-masing, dan path ke lokasi tersebut dikembalikan dalam XFile.
 
 Pada codelab ini, buatlah sebuah FloatingActionButton yang digunakan untuk mengambil gambar menggunakan CameraController saat pengguna mengetuk tombol.
@@ -164,8 +178,9 @@ Praktik baik untuk membungkus operasi kode ini dalam blok try / catch guna menan
 
 Kode berikut letakkan dalam Widget build setelah field body.
 
-lib/widget/takepicture_screen.dart
+**lib/widget/takepicture_screen.dart**
 
+```
 FloatingActionButton(
   // Provide an onPressed callback.
   onPressed: () async {
@@ -185,11 +200,17 @@ FloatingActionButton(
   },
   child: const Icon(Icons.camera_alt),
 )
-Langkah 7: Buat widget baru DisplayPictureScreen
+```
+
+<img src="assets/img8.png">
+
+
+## Langkah 7: Buat widget baru DisplayPictureScreen
 Buatlah file baru pada folder widget yang berisi kode berikut.
 
-lib/widget/displaypicture_screen.dart
+**lib/widget/displaypicture_screen.dart**
 
+```
 // A widget that displays the picture taken by the user.
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
@@ -206,11 +227,15 @@ class DisplayPictureScreen extends StatelessWidget {
     );
   }
 }
-Langkah 8: Edit main.dart
+```
+<img src="assets/img9.png">
+
+## Langkah 8: Edit main.dart
 Edit pada file ini bagian runApp seperti kode berikut.
 
-lib/main.dart
+**lib/main.dart**
 
+```
 runApp(
     MaterialApp(
       theme: ThemeData.dark(),
@@ -221,9 +246,13 @@ runApp(
       debugShowCheckedModeBanner: false,
     ),
   );
-Langkah 9: Menampilkan hasil foto
+```
+<img src="assets/img10.png">
+
+## Langkah 9: Menampilkan hasil foto
 Tambahkan kode seperti berikut pada bagian try / catch agar dapat menampilkan hasil foto pada DisplayPictureScreen.
 
+```
 lib/widget/takepicture_screen.dart
 
 // Take the Picture in a try / catch block. If anything goes wrong,
@@ -252,4 +281,10 @@ lib/widget/takepicture_screen.dart
             // If an error occurs, log the error to the console.
             print(e);
           }
+```
+<img src="assets/img11.png">
+
 Silakan deploy pada device atau smartphone Anda dan perhatikan hasilnya! 🙂
+
+## hasil :
+<img src="assets/img12">
