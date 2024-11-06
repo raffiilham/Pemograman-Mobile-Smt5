@@ -288,3 +288,6 @@ Silakan deploy pada device atau smartphone Anda dan perhatikan hasilnya! 🙂
 
 ## hasil :
 <img src="assets/img12">
+
+## setelah difoto :
+<img src="assets/img13">
