@@ -173,7 +173,7 @@ class _FilterSelectorState extends State<FilterSelector> {
   }
 }
 ```
-<img src="assets/img1.png">
+<img src="assets/img2.png">
 
 ## Langkah 3: Buat widget photo filter carousel
 Buat file baru di folder widget dengan kode seperti berikut.
@@ -249,7 +249,7 @@ class _PhotoFilterCarouselState extends State<PhotoFilterCarousel> {
 }
 ```
 
-<img src="assets/img1.png">
+<img src="assets/img3.png">
 
 ## Langkah 4: Membuat filter warna - bagian 1
 Buat file baru di folder widget seperti kode berikut.
@@ -321,7 +321,7 @@ class CarouselFlowDelegate extends FlowDelegate {
 }
 ```
 
-<img src="assets/img1.png">
+<img src="assets/img4.png">
 
 ## Langkah 5: Membuat filter warna
 Buat file baru di folder widget seperti kode berikut ini.
@@ -363,13 +363,13 @@ class FilterItem extends StatelessWidget {
 }
 ```
 
-<img src="assets/img1.png">
+<img src="assets/img5.png">
 
 
 ## Langkah 6: Implementasi filter carousel
 Terakhir, kita impor widget PhotoFilterCarousel ke main seperti kode berikut ini.
 
-lib/main.dart
+**lib/main.dart**
 
 ```
 void main() {
@@ -381,9 +381,9 @@ void main() {
   );
 }
 ```
-<img src="assets/img1.png">
+<img src="assets/img6.png">
 
-Troubleshoot
+**Troubleshoot**
 Jika diperlukan, beberapa widget yang telah Anda buat sebelumnya, memerlukan kode import berikut ini.
 
 ```
@@ -393,8 +393,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show ViewportOffset;
 ```
 
-<img src="assets/img1.png">
+## Hasil 1
+<img src="assets/img7.png">
 
-<img src="assets/img1.png">
+## Hasil 2
+<img src="assets/img8.png">
 
-<img src="assets/img1.png">
