@@ -1,4 +1,4 @@
-class Task {
+class Task{
   final String description;
   final bool complete;
   
