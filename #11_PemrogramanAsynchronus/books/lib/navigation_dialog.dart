@@ -15,7 +15,7 @@ class _NavigationDialogScreenState extends State<NavigationDialogScreen> {
       backgroundColor: color,
       appBar: AppBar(
         backgroundColor: Colors.pink.shade100,
-        title: const Text('Navigation Dialog Screen Nadila'),
+        title: const Text('Navigation Dialog Screen Raffi'),
       ),
       body: Center(
         child: ElevatedButton(
