@@ -220,3 +220,24 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 12**".
 
 <img src='assets/img10.png'>
+
+# **9. Praktikum 7: Manajemen Future dengan FutureBuilder**
+
+**Soal 13**
+- Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+### **jawab**
+
+- Pada praktikum sebelumnya menggunakan StatefulWidget sedangkan pada praktikum 7 menggunakan FutureBuilder.
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 13**".
+
+<img src='assets/img11.png'>
+
+- Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
+
+**Soal 14**
+- Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 14**".
+<img src='assets/img12.png'>
