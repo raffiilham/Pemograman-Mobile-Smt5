@@ -32,6 +32,31 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
  String result = '';
 
+ Future<int> returnOneAsync() async {
+  await Future.delayed(const Duration(seconds: 3));
+  return 1;
+}
+
+Future<int> returnTwoAsync() async {
+  await Future.delayed(const Duration(seconds: 3));
+  return 2;
+}
+
+Future<int> returnThreeAsync() async {
+  await Future.delayed(const Duration(seconds: 3));
+  return 3;
+}
+
+Future count() async {
+  int total = 0;
+  total = await returnOneAsync();
+  total += await returnOneAsync();
+  total += await returnOneAsync();
+  setState(() {
+    result = total.toString();
+  }); 
+}
+
    Future<Response> getData() async {
       const authority = 'www.googleapis.com';
       const path = '/books/v1/volumes/qwVnDwAAQBAJ';
@@ -51,6 +76,7 @@ class _FuturePageState extends State<FuturePage> {
          ElevatedButton(
            child: const Text('GO!'),
            onPressed: () {
+            count();
             setState(() {});
               getData()
               .then((value) {

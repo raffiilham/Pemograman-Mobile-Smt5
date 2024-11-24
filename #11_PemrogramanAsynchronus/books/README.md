@@ -83,5 +83,14 @@ class _FuturePageState extends State<FuturePage> {
 
 <img src='assets/img3.png'>
 
+4. Praktikum 2: Menggunakan await/async untuk menghindari callbacks
 
+### **Soal 4**
+- Jelaskan maksud kode langkah 1 dan 2 tersebut!<br>
+
+**jawab :**
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 4".
+
+<img src='assets/img4.gif'>
 
