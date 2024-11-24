@@ -35,13 +35,19 @@ class _FuturePageState extends State<FuturePage> {
 
    Future getNumber() {
   completer = Completer<int>();
-  calculate();
-  return completer.future;
+  calculate2();
+  return completer.future; 
 }
 
-Future calculate() async {
-  await Future.delayed(const Duration(seconds : 5));
+Future calculate2() async {
+  try {
+  await new Future.delayed(const Duration(seconds : 5));
   completer.complete(42);
+// throw Exception();
+  }
+  catch (_) {
+    completer.completeError({});
+  }
 }
 
  Future<int> returnOneAsync() async {
@@ -98,14 +104,15 @@ Future count() async {
             //     result = 'An error occured';
             //     setState(() {});
             // });
-            
+
              // Kode tambahan:
               getNumber().then((value) {
                 setState(() {
                   result = value.toString();
                 });
+              }).catchError((e) {
+                result = 'An error occured';
               });
-
            },
          ),
          const Spacer(),
