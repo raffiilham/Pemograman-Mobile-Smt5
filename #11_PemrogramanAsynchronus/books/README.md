@@ -166,3 +166,28 @@ setState digunakan untuk memperbaru
 
 <img src='assets/img6.gif'>
 
+# **6. Praktikum 4: Memanggil Future secara paralel**
+
+### **Soal 7**
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 7**".
+
+<img src='assets/img7.gif'>
+
+### **Soal 8**
+- Jelaskan maksud perbedaan kode langkah 1 dan 4!
+
+**jawab :**
+
+**Perbedaan Langkah 1 dan Langkah 4:**
+
+**Langkah 1: Menggunakan `FutureGroup`**
+- `FutureGroup` digunakan untuk mengelola beberapa `Future` dengan cara menambahkannya ke grup, menutup grup, dan menunggu semua `Future` selesai.
+- Membutuhkan lebih banyak kode untuk menambahkan `Future` dan menutup grup (`close`).
+
+**Langkah 4: Menggunakan `Future.wait`**
+- `Future.wait` langsung menerima daftar `Future` dan mengembalikan `Future<List>`, menyelesaikan setelah semua `Future` selesai.
+- Lebih sederhana, langsung menjalankan beberapa `Future` secara paralel tanpa perlu pengelolaan tambahan.
+
+### **Kesimpulan:**
+- **Langkah 4** lebih ringkas dan mudah dipahami, cocok untuk kebanyakan kasus.
+- **Langkah 1** memberikan kontrol lebih, tetapi lebih kompleks dan membutuhkan lebih banyak kode.
