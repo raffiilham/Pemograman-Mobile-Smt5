@@ -252,11 +252,24 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 **Soal 16**
 - Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
 
-<img src='assets/img14.gif'>
-
 **Jawab**
 Saat tombol di tekan maka akan mengarahkan pada NavigationSecond. Pada halaman tersebut dapat mengubah warna background dengan menekan tombol red, green, dan blue yang nantinnya akan merubah variable color pada NavigationFirst.
 
 - Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
 
 - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 16**".
+
+<img src='assets/img14.gif'>
+
+# **11. Praktikum 9: Memanfaatkan async/await dengan Widget Dialog**
+
+**Soal 17**
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+**Jawab**
+Pada saat tombol di tekan maka akan muncul dialog yang berisi red, green, dan blue yang nantinnya akan merubah variable color pada NavigationFirst.
+
+- Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 17".
+
+<img src='assets/img15.gif'>
