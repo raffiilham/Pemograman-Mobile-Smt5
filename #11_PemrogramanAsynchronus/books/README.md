@@ -191,3 +191,10 @@ setState digunakan untuk memperbaru
 ### **Kesimpulan:**
 - **Langkah 4** lebih ringkas dan mudah dipahami, cocok untuk kebanyakan kasus.
 - **Langkah 1** memberikan kontrol lebih, tetapi lebih kompleks dan membutuhkan lebih banyak kode.
+
+# **7. Praktikum 5: Menangani Respon Error pada Async Code**
+
+### **Soal 9**
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 9**".
+
+<img src='assets/img8.gif'>

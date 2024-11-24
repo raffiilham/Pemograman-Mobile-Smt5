@@ -35,6 +35,11 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
  String result = '';
 
+Future returnError() async {
+  await Future.delayed(const Duration(seconds: 2));
+  throw Exception('Something terrible happened!');
+}
+
 void returnFG() {
   final futures = Future.wait<int>([
   returnOneAsync(),
@@ -108,47 +113,40 @@ Future count() async {
       return http.get(url);
   }
 
- @override
- Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-       title: const Text('Back from the future'),
-     ),
-     body: Center(
-       child: Column(children: [
-         const Spacer(),
-         ElevatedButton(
-           child: const Text('GO!'),
-           onPressed: () {
-            returnFG();
-            // count();
-            // setState(() {});
-            //   getData()
-            //   .then((value) {
-            //     result = value.body.toString().substring(0, 450);
-            //     setState(() {});
-            //   }).catchError((_){
-            //     result = 'An error occured';
-            //     setState(() {});
-            // });
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Back from the future'),
+    ),
+    body: Center(
+      child: Column(children: [
+        const Spacer(),
+        ElevatedButton(
+          child: const Text('GO!'),
+          onPressed: () {
+            returnError()
+                .then((value) {
+                  setState(() {
+                    result = 'Success';
+                  });
+                })
+                .catchError((onError) {
+                  setState(() {
+                    result = onError.toString();
+                  });
+                })
+                .whenComplete(() => print('Complete'));
+          },
+        ),
+        const Spacer(),
+        Text(result),
+        const Spacer(),
+        const CircularProgressIndicator(),
+        const Spacer(),
+      ]),
+    ),
+  );
+}
 
-             // Kode tambahan:
-              // getNumber().then((value) {
-              //   setState(() {
-              //     result = value.toString();
-              //   });
-              // }).catchError((e) {
-              //   result = 'An error occured';
-              // });
-           }
-         ),
-         const Spacer(),
-         Text(result),
-         const Spacer(),
-         const CircularProgressIndicator(),
-         const Spacer(),
-       ]),
-     ),
-   );
- }
 }
