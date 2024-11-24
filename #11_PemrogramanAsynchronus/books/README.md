@@ -219,7 +219,7 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 - Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
 - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 12**".
 
-<img src='assets/img10.png'>
+<img src='assets/img10.gif'>
 
 # **9. Praktikum 7: Manajemen Future dengan FutureBuilder**
 
@@ -232,7 +232,7 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 
 - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 13**".
 
-<img src='assets/img11.png'>
+<img src='assets/img11.gif'>
 
 - Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
 
@@ -240,4 +240,23 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 - Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
 
 - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 14**".
-<img src='assets/img12.png'>
+<img src='assets/img12.gif'>
+
+# **10. Praktikum 8: Navigation route dengan Future Function**
+
+**Soal 15**
+- Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+- Silakan ganti dengan warna tema favorit Anda.
+<img src='assets/img13.png'>
+
+**Soal 16**
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+<img src='assets/img14.gif'>
+
+**Jawab**
+Saat tombol di tekan maka akan mengarahkan pada NavigationSecond. Pada halaman tersebut dapat mengubah warna background dengan menekan tombol red, green, dan blue yang nantinnya akan merubah variable color pada NavigationFirst.
+
+- Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 16**".
