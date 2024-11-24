@@ -94,3 +94,14 @@ class _FuturePageState extends State<FuturePage> {
 
 <img src='assets/img4.gif'>
 
+### 5. Praktikum 3: Menggunakan Completer di Future
+
+### **Soal 5**
+- Jelaskan maksud kode langkah 2 tersebut!
+
+**jawab :**<br>
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 5**".
+
+<img src='assets/img5.gif'>
+
