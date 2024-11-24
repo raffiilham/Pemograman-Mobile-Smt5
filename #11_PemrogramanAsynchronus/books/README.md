@@ -198,3 +198,11 @@ setState digunakan untuk memperbaru
 - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "**W11: Soal 9**".
 
 <img src='assets/img8.gif'>
+
+### **Soal 10**
+- Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+
+<img src='assets/img8.gif'>
+
+**Penjelasan :**
+- Hasil tidak berubah. Langkah 1 mendefinisikan fungsi returnError, yang membuat sebuah Future asinkron yang menunggu selama 2 detik sebelum melempar sebuah Exception. Fungsi ini tidak memiliki penanganan error di dalamnya, sehingga akan mengembalikan error langsung kepada pemanggilnya. Langkah 4 adalah implementasi penanganan error melalui fungsi handleError, yang memanggil returnError di dalam blok try-catch. Jika terjadi error, kode di dalam blok catch akan dijalankan untuk menangkap dan menangani error, misalnya dengan mengubah UI menggunakan setState. Selain itu, blok finally memastikan bahwa pesan "Complete" akan dicetak ke konsol, terlepas dari apakah error terjadi atau tidak.
