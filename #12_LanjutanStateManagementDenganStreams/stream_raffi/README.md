@@ -104,7 +104,6 @@ numberStream.addError();
 
 ## 6. Praktikum 4: Subscribe ke stream events
 
-## Praktikum 4
 ### Soal 9
 <img src='assets/img4.gif'>
 1. Langkah 2
@@ -115,3 +114,13 @@ numberStream.addError();
 3. Langkah 8
 - Menggunakan StreamController untuk mengirim data acak ke dalam stream.
 - Menangani situasi di mana stream sudah ditutup dengan mengubah state lastNumber menjadi -1.
+
+## Praktikum 5: Multiple stream subscriptions
+
+### Soal 10
+- Terjadi Error karena ada kode 2 listener.
+
+## Soal 11
+<img src='assets/img5.gif'>
+
+- Karena pada saat Set broadcast stream, akan memanggil 2 listener yang akan mengembalikan nilai yang sama. Karena itu pada tampilan akan mengeluarkan 2 nilai yang sama.

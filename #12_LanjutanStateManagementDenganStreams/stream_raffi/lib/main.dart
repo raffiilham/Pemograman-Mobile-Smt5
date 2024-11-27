@@ -31,6 +31,9 @@ class StreamHomePage extends StatefulWidget {
 
 class _StreamHomePageState extends State<StreamHomePage> {
 
+  late StreamSubscription subscription2;
+  String values = '';
+
   void stopStream() {
     NumberStreamController.close();
   }
@@ -80,24 +83,31 @@ class _StreamHomePageState extends State<StreamHomePage> {
     super.activate();
   }
 
-  @override
+@override
 void initState() {
   super.initState();
 
   numberStream = NumberStream();
   NumberStreamController = numberStream.controller;
-  Stream stream = NumberStreamController.stream;
 
+  // Mengubah stream menjadi broadcast stream agar dapat didengarkan oleh lebih dari satu subscription
+  Stream stream = NumberStreamController.stream.asBroadcastStream();
+
+  // Subscription pertama
   subscription = stream.listen((event) {
     setState(() {
-      lastNumber = event;
+      values += '$event - ';
     });
   });
 
-  subscription.onDone(() {
-    print('OnDone was called');
+  // Subscription kedua
+  subscription2 = stream.listen((event) {
+    setState(() {
+      values += '$event - ';
+    });
   });
 }
+
 
 
   
@@ -119,7 +129,7 @@ void initState() {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Text(lastNumber.toString()),
-            Text(lastNumber.toString()),
+            Text(values),
             ElevatedButton(
               onPressed: () => addRandomNumber(),
              child: Text('New Random Number'),
