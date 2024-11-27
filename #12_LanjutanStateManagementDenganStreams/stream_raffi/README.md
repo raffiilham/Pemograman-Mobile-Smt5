@@ -101,3 +101,17 @@ numberStream.addError();
 <img src ='assets/3.gif'>
 
 - Kode Langkah 1-3 mengimplementasikan transformasi stream pada aplikasi Flutter. Ini menggunakan StreamTransformer untuk mengalikan nilai integer dalam stream dengan 10. Hasil transformasi dan penanganan kesalahan diterapkan, dan hasilnya diperbarui dalam state lastNumber untuk pembaruan antarmuka pengguna.
+
+## 6. Praktikum 4: Subscribe ke stream events
+
+## Praktikum 4
+### Soal 9
+<img src='assets/img4.gif'>
+1. Langkah 2
+- Membuat subscription untuk memantau perubahan pada suatu stream.
+- Ketika ada perubahan, nilai stream digunakan untuk memperbarui state lastNumber dan kemungkinan memperbarui antarmuka pengguna.
+2. Langkah 6
+- Membatalkan pemantauan terhadap stream jika tidak lagi diperlukan.
+3. Langkah 8
+- Menggunakan StreamController untuk mengirim data acak ke dalam stream.
+- Menangani situasi di mana stream sudah ditutup dengan mengubah state lastNumber menjadi -1.
