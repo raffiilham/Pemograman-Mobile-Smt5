@@ -120,7 +120,14 @@ numberStream.addError();
 ### Soal 10
 - Terjadi Error karena ada kode 2 listener.
 
-## Soal 11
+### Soal 11
 <img src='assets/img5.gif'>
 
 - Karena pada saat Set broadcast stream, akan memanggil 2 listener yang akan mengembalikan nilai yang sama. Karena itu pada tampilan akan mengeluarkan 2 nilai yang sama.
+
+## 8. Praktikum 6: StreamBuilder
+
+### Soal 12
+<img src='assets/img6.gif'>
+- Langkah 3: digunakan untuk membuat stream yang mengenerate random number.
+- Langkah 7: digunakan untuk mengimplimentasikan stream menggunakan StreamBuilder. Jika stream mendapatkan data maka akan menampilkan Text dengan nilai snapshot.data dan jika terjadi error maka akan melakukan log.
