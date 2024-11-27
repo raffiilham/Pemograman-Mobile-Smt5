@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 class NumberStream {
+
+  addError() {
+    controller.sink.addError('error');
+  }
+  
   final StreamController<int> controller = StreamController<int>();
 
   void addNumberToSink(int newNumber) {
